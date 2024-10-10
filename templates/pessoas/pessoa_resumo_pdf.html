@@ -1,0 +1,30 @@
+<!-- templates/pessoas/pessoa_resumo_pdf.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo de {{ pessoa.nome }}</title>
+    <style>
+        h3 {
+            text-align: center; /* Centraliza o título */
+            font-size: 24px; /* Aumenta o tamanho da fonte */
+            margin-bottom: 20px; /* Espaçamento inferior */
+        }
+    </style>
+</head>
+<body>
+    <h3>Dados de {{ pessoa.nome }}</h3>
+    <p><strong>Nome:</strong> {{ pessoa.nome }}</p>
+    <p><strong>Data de Nascimento:</strong> {{ pessoa.data_nascimento }}</p>
+    <p><strong>Sexo:</strong> {{ pessoa.sexo }}</p>
+    <p><strong>CPF:</strong> {{ pessoa.cpf }}</p>
+    <p><strong>Email:</strong> {{ pessoa.email }}</p>
+    <p><strong>Celular:</strong> {{ pessoa.celular }}</p>
+    <p><strong>Endereço:</strong> {{ pessoa.endereco }}</p>
+    <p><strong>Bairro:</strong> {{ pessoa.bairro }}</p>
+    <p><strong>Cidade:</strong> {{ pessoa.cidade }}</p>
+    <p><strong>Estado:</strong> {{ pessoa.estado }}</p>
+    <p><strong>Data do Registro:</strong> {{ pessoa.data_registro }}</p>
+</body>
+</html>

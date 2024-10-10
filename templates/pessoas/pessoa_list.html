@@ -1,0 +1,35 @@
+{% extends 'pessoas/base.html' %}
+
+{% block content %}
+    <h2>Lista de Pessoas</h2>
+    <a href="{% url 'pessoa_create' %}" class="btn btn-success mb-3">Novo Cadastro</a>
+    <a href="{% url 'export_csv' %}" class="btn btn-secondary mb-3">Exportar CSV</a>
+    <a href="{% url 'gerar_pdf' %}" class="btn btn-warning mb-3">Exportar para PDF</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Celular</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pessoa in pessoas %}
+            <tr>
+                <td>{{ pessoa.nome }}</td>
+                <td>{{ pessoa.cpf }}</td>
+                <td>{{pessoa.celular}}</td>
+                <td>
+                    <a href="{% url 'pessoa_update' pessoa.id %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'pessoa_delete' pessoa.id %}" class="btn btn-danger">Deletar</a>
+                    <a href="{% url 'pessoa_resumo' pessoa.id %}" class="btn btn-info">Resumo</a>  <!-- Botão Resumo -->
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <h3>Dashboard de Cadastro</h3>
+    <div>{{ plot_div|safe }}</div>
+{% endblock %}

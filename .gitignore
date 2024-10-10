@@ -1,0 +1,4 @@
+venv
+pessoasvenv
+__pycache__
+*.pyc

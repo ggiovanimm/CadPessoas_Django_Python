@@ -1,0 +1,20 @@
+<!-- templates/pessoas/pessoa_resumo.html -->
+{% extends 'pessoas/base.html' %}
+
+{% block content %}
+    <h2>Resumo de {{ pessoa.nome }}</h2>
+    <p><strong>Nome:</strong> {{ pessoa.nome }}</p>
+    <p><strong>Data de Nascimento:</strong> {{ pessoa.data_nascimento }}</p>
+    <p><strong>Sexo:</strong> {{ pessoa.sexo }}</p>
+    <p><strong>CPF:</strong> {{ pessoa.cpf }}</p>
+    <p><strong>Email:</strong> {{ pessoa.email }}</p>
+    <p><strong>Celular:</strong> {{ pessoa.celular }}</p>
+    <p><strong>Endereço:</strong> {{ pessoa.endereco }}</p>
+    <p><strong>Bairro:</strong> {{ pessoa.bairro }}</p>
+    <p><strong>Cidade:</strong> {{ pessoa.cidade }}</p>
+    <p><strong>Estado:</strong> {{ pessoa.estado }}</p>
+    <p><strong>Data do Registro:</strong> {{ pessoa.data_registro }}</p>
+
+    <a href="{% url 'pessoa_pdf' pessoa.id %}" class="btn btn-primary">Gerar PDF</a>
+    <a href="{% url 'pessoa_list' %}" class="btn btn-secondary">Voltar</a>
+{% endblock %}
